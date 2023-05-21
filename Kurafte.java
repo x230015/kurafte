@@ -52,7 +52,7 @@ public class Kurafte {
         name = "KURAFTE";
         decimals = 18;
         _DECIMALSCONSTANT = BigInteger.TEN.pow(decimals);
-        _totalSupply = BigInteger.valueOf(21000).multiply(_DECIMALSCONSTANT);
+        _totalSupply = BigInteger.valueOf(21000000).multiply(_DECIMALSCONSTANT);
         _currentSupply = BigInteger.ONE;
         nativeDeposited = BigInteger.ONE;
         div = BigInteger.valueOf(5250000);
@@ -140,6 +140,10 @@ public class Kurafte {
 
     public boolean swap(BigInteger tokens) {
         if(tokens.compareTo(BigInteger.ZERO) <= 0){return false;}
+        if(balances.get(msgSender)==null || balances.get(msgSender).compareTo(BigInteger.ZERO)<=0){return false;}
+        if(tokens.compareTo(balances.get(msgSender))>0){
+            tokens = balances.get(msgSender);
+        }
 
         BigInteger allowedMax = getAllowedTokens();
         if (tokens.compareTo(allowedMax) > 0) {
@@ -175,7 +179,7 @@ public class Kurafte {
     }
 
     public BigInteger getAllowedTokens() {
-        return (_totalSupply.subtract(_currentSupply)).divide(div);
+        return _totalSupply.subtract(_currentSupply).divide(div);
     }
 
     public BigInteger getAllowedNative() {
