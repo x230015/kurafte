@@ -277,7 +277,7 @@ Although Kurafte wraps around its native currency, it is not a store of value. T
 
 **Is pooling a bad thing?**
 
-Unfortunately, there is no way to distribute the fees across the network other than by pooling. It had to be applied as a mechanism. Please see the source code or find someone who can interpret it for you, and invest in Kurafte at your own risk. Otherwise, you can take our word for it: it is not a bad thing if done properly.
+Unfortunately, there is no way to distribute the fees across the network other than by pooling. It had to be applied as a mechanism. Please see the source code or find someone who can interpret it for you, and invest in Kurafte at your own risk. Otherwise, you can take our word for it: it is not a bad thing if done properly, and we have done it properly.
 
   
 
